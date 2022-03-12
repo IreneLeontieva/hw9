@@ -44,7 +44,10 @@ public class UnzipFiles {
         try (CSVReader reader = new CSVReader(new InputStreamReader(file));) {
             List<String[]> strA = reader.readAll();
             assertThat(strA.get(1)).contains(
-                    "150000"
+                    "150000",
+                    "2016-01-01",
+                    "Chris Riley",
+                    "trailhead9.ub20k5i9t8ou@example.com"
             );
         }
     }
@@ -52,17 +55,17 @@ public class UnzipFiles {
     void parseXlsTest(InputStream file) throws Exception {
         XLS xls = new XLS(file);
         assertThat(xls.excel
-                .getSheetAt(1)
-                .getRow(1)
-                .getCell(1)
-                .getStringCellValue()).contains("Личный бюджет на месяц");
+                .getSheetAt(0)
+                .getRow(0)
+                .getCell(0)
+                .getStringCellValue()).contains("sample");
 
     }
 
     void parsePdfTest(InputStream file) throws Exception {
         PDF pdf = new PDF(file);
         assertThat(pdf.text).contains(
-                "Пример PDF файла"
+                "And more text. And more text. And more text. And more text. And more"
         );
 
     }
