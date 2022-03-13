@@ -1,0 +1,12 @@
+{
+  "firstName": "Irina",
+  "lastName": "Leonteva",
+  "favoriteFood": [
+    "meat",
+    "noodles"
+  ],
+  "address": {
+    "conutry": "Russia",
+    "city": "Moscow"
+  }
+}
